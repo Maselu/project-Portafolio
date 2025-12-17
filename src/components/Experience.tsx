@@ -5,6 +5,18 @@ import { Calendar, MapPin, ExternalLink } from 'lucide-react';
 const Experience = () => {
   const experiences = [
     {
+      title: 'Development Intern',
+      company: 'Minsait',
+      location: 'Ciudad Real, Castilla-La Mancha',
+      period: '2025',
+      description: [
+        'Customer relationship management.',
+        'ERP project planning.',
+        'Process automation using PowerApps.',
+      ],
+      link: 'https://www.linkedin.com/in/mamadou-cellou-dembele-diallo-077429218/?profileId=ACoAADbhTxsBob543yh1Jvi53PwRrYHQM_M2kz8'
+    },
+    {
       title: 'Automation Technician',
       company: 'Termain',
       location: 'Mocejón, Toledo',
@@ -15,7 +27,7 @@ const Experience = () => {
         'Installation and commissioning of frequency inverters, sensors, actuators, valves, and AC motors.',
         'Supervision, control, and data acquisition using an HMI for process visualization and control.'
       ],
-      link: '#'
+      link: 'https://www.linkedin.com/in/mamadou-cellou-dembele-diallo-077429218/?profileId=ACoAADbhTxsBob543yh1Jvi53PwRrYHQM_M2kz8'
     },
     {
       title: 'Photovoltaic Installer',
@@ -27,7 +39,7 @@ const Experience = () => {
         'Inverter installation.',
         'Startup of the photovoltaic system'
       ],
-      link: '#'
+      link: 'https://www.linkedin.com/in/mamadou-cellou-dembele-diallo-077429218/?profileId=ACoAADbhTxsBob543yh1Jvi53PwRrYHQM_M2kz8'
     },
     {
       title: 'Electrical Installer in Public Places',
@@ -40,7 +52,7 @@ const Experience = () => {
         'Wiring of electrical panel for its purpose.',
         'Laying of electrical cables, RJ45 data cable for RACK.'
       ],
-      link: '#'
+      link: 'https://www.linkedin.com/in/mamadou-cellou-dembele-diallo-077429218/?profileId=ACoAADbhTxsBob543yh1Jvi53PwRrYHQM_M2kz8'
     }
   ];
 

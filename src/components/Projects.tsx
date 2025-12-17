@@ -5,20 +5,20 @@ import { ExternalLink, Github, Play } from 'lucide-react';
 const Projects = () => {
   const projects = [
     {
-      title: 'Autonomous Navigation Robot',
-      description: 'Advanced mobile robot with SLAM capabilities, real-time path planning, and obstacle avoidance using deep reinforcement learning.',
+      title: 'Social Interaction Web Application',
+      description: 'Web application for social interaction with users who consume centralized information. Articles are extracted from various reliable sources and segmented into categories such as general news, sports, science, entertainment, and a section for weather reports.',
       image: 'https://images.pexels.com/photos/2599244/pexels-photo-2599244.jpeg?auto=compress&cs=tinysrgb&w=800',
-      technologies: ['ROS2', 'Python', 'TensorFlow', 'OpenCV', 'Gazebo'],
-      github: '#',
-      demo: '#',
+      technologies: ['React', 'TypeScript','Jsx', 'Php', 'Laravel', 'Supabase'],
+      github: 'https://github.com/Maselu/opcion-1-snews-',
+      demo: 'https://github.com/Maselu/opcion-1-snews-/blob/main/README.md',
       featured: true
     },
     {
       title: 'Neural Network Optimizer',
       description: 'Custom neural network architecture optimization tool using genetic algorithms and automated hyperparameter tuning.',
       image: 'https://images.pexels.com/photos/8386440/pexels-photo-8386440.jpeg?auto=compress&cs=tinysrgb&w=800',
-      technologies: ['PyTorch', 'Python', 'CUDA', 'NumPy'],
-      github: '#',
+      technologies: ['TensorFlow','PyTorch', 'Python', 'CUDA', 'NumPy'],
+      github: 'https://github.com/Maselu',
       demo: '#',
       featured: false
     },
@@ -26,8 +26,8 @@ const Projects = () => {
       title: 'Robotic Arm Controller',
       description: 'Precision control system for 6-DOF robotic arm with computer vision integration for pick-and-place operations.',
       image: 'https://images.pexels.com/photos/8386434/pexels-photo-8386434.jpeg?auto=compress&cs=tinysrgb&w=800',
-      technologies: ['C++', 'ROS', 'MoveIt', 'OpenCV', 'Arduino'],
-      github: '#',
+      technologies: ['C++', 'ROS2', 'MoveIt', 'OpenCV', 'Arduino'],
+      github: 'https://github.com/Maselu',
       demo: '#',
       featured: true
     },
@@ -35,8 +35,8 @@ const Projects = () => {
       title: 'Swarm Intelligence Simulator',
       description: 'Multi-agent simulation platform for studying emergent behaviors in robotic swarms using distributed algorithms.',
       image: 'https://images.pexels.com/photos/8386422/pexels-photo-8386422.jpeg?auto=compress&cs=tinysrgb&w=800',
-      technologies: ['Python', 'Mesa', 'NetworkX', 'Matplotlib'],
-      github: '#',
+      technologies: ['Python', 'Mesa AI automation platform', 'NetworkX', 'Matplotlib','Gazebo'],
+      github: 'https://github.com/Maselu',
       demo: '#',
       featured: false
     }

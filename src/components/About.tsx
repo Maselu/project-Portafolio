@@ -7,7 +7,7 @@ const About = () => {
     {
       icon: Brain,
       title: 'Web Application Programmer',
-      description: 'Deep learning architectures for complex problem solving'
+      description: 'Full-stack development of interface design, preparation of client and server environments, implementations, and deployment.'
     },
     {
       icon: Cpu,
@@ -21,8 +21,8 @@ const About = () => {
     },
     {
       icon: Target,
-      title: 'Precision Control',
-      description: 'High-precision motion control and sensor fusion'
+      title: 'Certified in Server Environment',
+      description: 'Knowledge of C#'
     } 
       
   ];
