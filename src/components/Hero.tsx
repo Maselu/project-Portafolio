@@ -68,14 +68,18 @@ const Hero = () => {
               <a href="mailto:mamadudembele@gmail.com">{t.hero.btnContact}</a>
             </motion.button>
 
-            <motion.button
+            <motion.a
+              href="/cv.pdf"
+              download="CV_Mamadou_Cellou.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               className="border-2 border-cyan-400 text-cyan-400 px-8 py-4 rounded-full font-semibold flex items-center space-x-2 hover:bg-cyan-400 hover:text-slate-900 transition-all duration-300"
             >
               <Download className="h-5 w-5" />
               <span>{t.hero.btnCV}</span>
-            </motion.button>
+            </motion.a>
           </motion.div>
         </div>
       </div>
