@@ -69,7 +69,7 @@ const Hero = () => {
             </motion.button>
 
             <motion.a
-              href="/cv.pdf"
+              href="\cv.pdf"
               download="CV_Mamadou_Cellou.pdf"
               target="_blank"
               rel="noopener noreferrer"
