@@ -1,30 +1,32 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Brain, Cpu, Zap, Target } from 'lucide-react';
+import { useLanguage } from '../context/LanguageContext';
 
 const About = () => {
+  const { t } = useLanguage();
   const features = [
     {
       icon: Brain,
-      title: 'Web Application Programmer',
-      description: 'Full-stack development of interface design, preparation of client and server environments, implementations, and deployment.'
+      title: t.about.features.webDev.title,
+      description: t.about.features.webDev.description
     },
     {
       icon: Cpu,
-      title: 'Higher Technician in Industrial Automation and Robotics',
-      description: 'Advanced autonomous systems and control algorithms'
+      title: t.about.features.automation.title,
+      description: t.about.features.automation.description
     },
     {
       icon: Zap,
-      title: 'Intermediate Vocational Training Cycle in Electrical and Automatic Installations',
-      description: 'Solar Panel Systems'
+      title: t.about.features.electrical.title,
+      description: t.about.features.electrical.description
     },
     {
       icon: Target,
-      title: 'Certified in Server Environment',
-      description: 'Knowledge of C#'
-    } 
-      
+      title: t.about.features.server.title,
+      description: t.about.features.server.description
+    }
+
   ];
 
   return (
@@ -39,13 +41,11 @@ const About = () => {
         >
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
             <span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
-              About Me
+              {t.about.title}
             </span>
           </h2>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-            I have experience in the field of automation, performing PLC logic programming functions, HMI user interface configuration, and equipment commissioning.
-            I am characterized by my attention to detail, problem-solving skills, and strong project management skills.
-            Thanks to my ongoing training, I can adapt to different technologies and production processes.
+            {t.about.description}
           </p>
         </motion.div>
 

@@ -1,8 +1,10 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Bot, Github, Linkedin, Twitter, ArrowUp } from 'lucide-react';
+import { Bot, Github, Linkedin, ArrowUp } from 'lucide-react';
+import { useLanguage } from '../context/LanguageContext';
 
 const Footer = () => {
+  const { t } = useLanguage();
   const socialLinks = [
     { icon: Github, href: 'https://github.com/Maselu', label: 'GitHub' },
     { icon: Linkedin, href: 'https://www.linkedin.com/in/mamadou-cellou-dembele-diallo-077429218/', label: 'LinkedIn' },
@@ -22,23 +24,22 @@ const Footer = () => {
             <div className="flex items-center space-x-2">
               <Bot className="h-8 w-8 text-cyan-400" />
               <span className="text-xl font-bold bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
-                Systems Administrator
+                {t.footer.brand}
               </span>
             </div>
             <p className="text-gray-400 max-w-md">
-              Pioneering the future through advanced robotics, neural networks, and AI systems.
-              Transforming ideas into intelligent machines.
+              {t.footer.description}
             </p>
           </div>
 
           {/* Quick Links */}
           <div className="space-y-4">
-            <h3 className="text-white font-semibold">Quick Links</h3>
+            <h3 className="text-white font-semibold">{t.footer.quickLinks}</h3>
             <ul className="space-y-2">
-              {['About', 'Experience', 'Skills', 'Projects', 'Contact'].map((item) => (
+              {[t.nav.about, t.nav.experience, t.nav.skills, t.nav.projects, t.nav.contact].map((item, index) => (
                 <li key={item}>
                   <motion.a
-                    href={`#${item.toLowerCase()}`}
+                    href={`#${['about', 'experience', 'skills', 'projects', 'contact'][index]}`}
                     whileHover={{ x: 5 }}
                     className="text-gray-400 hover:text-cyan-400 transition-colors"
                   >
@@ -51,7 +52,7 @@ const Footer = () => {
 
           {/* Social Links */}
           <div className="space-y-4">
-            <h3 className="text-white font-semibold">Connect</h3>
+            <h3 className="text-white font-semibold">{t.footer.connect}</h3>
             <div className="flex space-x-4">
               {socialLinks.map((social) => (
                 <motion.a
@@ -70,9 +71,9 @@ const Footer = () => {
 
         <div className="border-t border-slate-700 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
           <p className="text-gray-400 text-sm">
-            © 2025 Maselu Portfolio. All rights reserved.
+            {t.footer.rights}
           </p>
-          
+
           <motion.button
             onClick={scrollToTop}
             whileHover={{ scale: 1.1 }}

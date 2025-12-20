@@ -1,30 +1,32 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { ExternalLink, Github, Play } from 'lucide-react';
+import { useLanguage } from '../context/LanguageContext';
 
 const Projects = () => {
+  const { t } = useLanguage();
   const projects = [
     {
-      title: 'Social Interaction Web Application',
-      description: 'Web application for social interaction with users who consume centralized information. Articles are extracted from various reliable sources and segmented into categories such as general news, sports, science, entertainment, and a section for weather reports.',
+      title: t.projects.items.socialApp.title,
+      description: t.projects.items.socialApp.description,
       image: 'https://images.pexels.com/photos/2599244/pexels-photo-2599244.jpeg?auto=compress&cs=tinysrgb&w=800',
-      technologies: ['React', 'TypeScript','Jsx', 'Php', 'Laravel', 'Supabase'],
+      technologies: ['React', 'TypeScript', 'Jsx', 'Php', 'Laravel', 'Supabase'],
       github: 'https://github.com/Maselu/opcion-1-snews-',
       demo: 'https://github.com/Maselu/opcion-1-snews-/blob/main/README.md',
       featured: true
     },
     {
-      title: 'Neural Network Optimizer',
-      description: 'Custom neural network architecture optimization tool using genetic algorithms and automated hyperparameter tuning.',
+      title: t.projects.items.neuralOptimizer.title,
+      description: t.projects.items.neuralOptimizer.description,
       image: 'https://images.pexels.com/photos/8386440/pexels-photo-8386440.jpeg?auto=compress&cs=tinysrgb&w=800',
-      technologies: ['TensorFlow','PyTorch', 'Python', 'CUDA', 'NumPy'],
+      technologies: ['TensorFlow', 'PyTorch', 'Python', 'CUDA', 'NumPy'],
       github: 'https://github.com/Maselu',
       demo: '#',
       featured: false
     },
     {
-      title: 'Robotic Arm Controller',
-      description: 'Precision control system for 6-DOF robotic arm with computer vision integration for pick-and-place operations.',
+      title: t.projects.items.roboticArm.title,
+      description: t.projects.items.roboticArm.description,
       image: 'https://images.pexels.com/photos/8386434/pexels-photo-8386434.jpeg?auto=compress&cs=tinysrgb&w=800',
       technologies: ['C++', 'ROS2', 'MoveIt', 'OpenCV', 'Arduino'],
       github: 'https://github.com/Maselu',
@@ -32,10 +34,10 @@ const Projects = () => {
       featured: true
     },
     {
-      title: 'Swarm Intelligence Simulator',
-      description: 'Multi-agent simulation platform for studying emergent behaviors in robotic swarms using distributed algorithms.',
+      title: t.projects.items.swarmSim.title,
+      description: t.projects.items.swarmSim.description,
       image: 'https://images.pexels.com/photos/8386422/pexels-photo-8386422.jpeg?auto=compress&cs=tinysrgb&w=800',
-      technologies: ['Python', 'Mesa AI automation platform', 'NetworkX', 'Matplotlib','Gazebo'],
+      technologies: ['Python', 'Mesa AI automation platform', 'NetworkX', 'Matplotlib', 'Gazebo'],
       github: 'https://github.com/Maselu',
       demo: '#',
       featured: false
@@ -54,7 +56,7 @@ const Projects = () => {
         >
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
             <span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
-              Featured Projects
+              {t.projects.title}
             </span>
           </h2>
         </motion.div>
@@ -68,9 +70,8 @@ const Projects = () => {
               transition={{ duration: 0.8, delay: index * 0.1 }}
               viewport={{ once: true }}
               whileHover={{ y: -10 }}
-              className={`bg-slate-900/50 backdrop-blur-sm rounded-xl border border-slate-700 hover:border-cyan-400 transition-all duration-300 overflow-hidden ${
-                project.featured ? 'lg:col-span-2' : ''
-              }`}
+              className={`bg-slate-900/50 backdrop-blur-sm rounded-xl border border-slate-700 hover:border-cyan-400 transition-all duration-300 overflow-hidden ${project.featured ? 'lg:col-span-2' : ''
+                }`}
             >
               <div className={`${project.featured ? 'md:flex' : ''}`}>
                 <div className={`${project.featured ? 'md:w-1/2' : ''}`}>
@@ -83,11 +84,11 @@ const Projects = () => {
                     <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 to-transparent"></div>
                   </div>
                 </div>
-                
+
                 <div className={`p-6 ${project.featured ? 'md:w-1/2' : ''}`}>
                   <h3 className="text-xl font-bold text-white mb-3">{project.title}</h3>
                   <p className="text-gray-300 mb-4">{project.description}</p>
-                  
+
                   <div className="flex flex-wrap gap-2 mb-4">
                     {project.technologies.map((tech, techIndex) => (
                       <span
@@ -98,7 +99,7 @@ const Projects = () => {
                       </span>
                     ))}
                   </div>
-                  
+
                   <div className="flex space-x-4">
                     <motion.a
                       href={project.github}
@@ -106,7 +107,7 @@ const Projects = () => {
                       className="flex items-center space-x-2 text-gray-400 hover:text-cyan-400 transition-colors"
                     >
                       <Github className="h-5 w-5" />
-                      <span>Code</span>
+                      <span>{t.projects.buttons.code}</span>
                     </motion.a>
                     <motion.a
                       href={project.demo}
@@ -114,7 +115,7 @@ const Projects = () => {
                       className="flex items-center space-x-2 text-gray-400 hover:text-cyan-400 transition-colors"
                     >
                       <Play className="h-5 w-5" />
-                      <span>Demo</span>
+                      <span>{t.projects.buttons.demo}</span>
                     </motion.a>
                     <motion.a
                       href="#"
@@ -122,7 +123,7 @@ const Projects = () => {
                       className="flex items-center space-x-2 text-gray-400 hover:text-cyan-400 transition-colors"
                     >
                       <ExternalLink className="h-5 w-5" />
-                      <span>Live</span>
+                      <span>{t.projects.buttons.live}</span>
                     </motion.a>
                   </div>
                 </div>

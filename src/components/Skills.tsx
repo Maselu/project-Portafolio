@@ -1,10 +1,12 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { useLanguage } from '../context/LanguageContext';
 
 const Skills = () => {
+  const { t } = useLanguage();
   const skillCategories = [
     {
-      title: 'Programming Languages',
+      title: t.skills.categories.programming,
       skills: [
         { name: 'C#', level: 95 },
         { name: 'Java', level: 90 },
@@ -14,7 +16,7 @@ const Skills = () => {
       ]
     },
     {
-      title: 'Robotics Frameworks',
+      title: t.skills.categories.robotics,
       skills: [
         { name: 'Logo[Siemens]', level: 95 },
         { name: 'Cx-Programmer[Omron]', level: 90 },
@@ -24,7 +26,7 @@ const Skills = () => {
       ]
     },
     {
-      title: 'AI/ML Frameworks',
+      title: t.skills.categories.aiml,
       skills: [
         { name: 'TensorFlow', level: 93 },
         { name: 'GenAI', level: 90 },
@@ -34,7 +36,7 @@ const Skills = () => {
       ]
     },
     {
-      title: 'Hardware & Tools',
+      title: t.skills.categories.hardware,
       skills: [
         { name: 'Arduino/ESP32', level: 90 },
         { name: 'Raspberry Pi', level: 88 },
@@ -57,7 +59,7 @@ const Skills = () => {
         >
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
             <span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
-              Skills & Expertise
+              {t.skills.title}
             </span>
           </h2>
         </motion.div>

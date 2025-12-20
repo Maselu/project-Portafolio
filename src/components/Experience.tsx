@@ -1,57 +1,42 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Calendar, MapPin, ExternalLink } from 'lucide-react';
+import { useLanguage } from '../context/LanguageContext';
 
 const Experience = () => {
+  const { t } = useLanguage();
+
   const experiences = [
     {
-      title: 'Development Intern',
+      title: t.experience.jobs.developmentIntern.title,
       company: 'Minsait',
       location: 'Ciudad Real, Castilla-La Mancha',
       period: '2025',
-      description: [
-        'Customer relationship management.',
-        'ERP project planning.',
-        'Process automation using PowerApps.',
-      ],
+      description: t.experience.jobs.developmentIntern.descriptions,
       link: 'https://www.linkedin.com/in/mamadou-cellou-dembele-diallo-077429218/?profileId=ACoAADbhTxsBob543yh1Jvi53PwRrYHQM_M2kz8'
     },
     {
-      title: 'Automation Technician',
+      title: t.experience.jobs.automationTech.title,
       company: 'Termain',
       location: 'Mocejón, Toledo',
       period: '2023',
-      description: [
-        'Implementation of automated systems for industrial laundry process control using logic programming via Cx-programmer.',
-        'Configuration of digital and analog inputs/outputs with an Omron SYSMAC CJ2M CPU33 PLC.',
-        'Installation and commissioning of frequency inverters, sensors, actuators, valves, and AC motors.',
-        'Supervision, control, and data acquisition using an HMI for process visualization and control.'
-      ],
+      description: t.experience.jobs.automationTech.descriptions,
       link: 'https://www.linkedin.com/in/mamadou-cellou-dembele-diallo-077429218/?profileId=ACoAADbhTxsBob543yh1Jvi53PwRrYHQM_M2kz8'
     },
     {
-      title: 'Photovoltaic Installer',
+      title: t.experience.jobs.photovoltaicInstaller.title,
       company: 'Kaylon Energías Renovables',
       location: 'Nambroca, Toledo',
       period: '2022',
-      description: [
-        'Installation of photovoltaic solar panels.',
-        'Inverter installation.',
-        'Startup of the photovoltaic system'
-      ],
+      description: t.experience.jobs.photovoltaicInstaller.descriptions,
       link: 'https://www.linkedin.com/in/mamadou-cellou-dembele-diallo-077429218/?profileId=ACoAADbhTxsBob543yh1Jvi53PwRrYHQM_M2kz8'
     },
     {
-      title: 'Electrical Installer in Public Places',
+      title: t.experience.jobs.electricalInstaller.title,
       company: 'ZINO TECHNICAL SERVICES',
       location: 'Toledo',
       period: '2019',
-      description: [
-        'Installation of low/medium voltage electrical systems in the theme park (Puy du Fou).',
-        'Installation of corrugated pipes, rejiband trays.',
-        'Wiring of electrical panel for its purpose.',
-        'Laying of electrical cables, RJ45 data cable for RACK.'
-      ],
+      description: t.experience.jobs.electricalInstaller.descriptions,
       link: 'https://www.linkedin.com/in/mamadou-cellou-dembele-diallo-077429218/?profileId=ACoAADbhTxsBob543yh1Jvi53PwRrYHQM_M2kz8'
     }
   ];
@@ -68,7 +53,7 @@ const Experience = () => {
         >
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
             <span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
-              Experience
+              {t.experience.title}
             </span>
           </h2>
         </motion.div>
@@ -84,9 +69,8 @@ const Experience = () => {
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, delay: index * 0.2 }}
               viewport={{ once: true }}
-              className={`relative flex items-center mb-12 ${
-                index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'
-              }`}
+              className={`relative flex items-center mb-12 ${index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'
+                }`}
             >
               {/* Timeline dot */}
               <div className="absolute left-4 md:left-1/2 transform md:-translate-x-1/2 w-4 h-4 bg-cyan-400 rounded-full border-4 border-slate-900 z-10"></div>
@@ -109,7 +93,7 @@ const Experience = () => {
                       <ExternalLink className="h-5 w-5" />
                     </motion.a>
                   </div>
-                  
+
                   <div className="flex items-center space-x-4 mb-4 text-sm text-gray-400">
                     <div className="flex items-center space-x-1">
                       <Calendar className="h-4 w-4" />

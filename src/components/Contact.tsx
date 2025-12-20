@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Mail, Phone, MapPin, Send } from 'lucide-react';
+import { Mail, MapPin, Send } from 'lucide-react';
+import { useLanguage } from '../context/LanguageContext';
 
 const Contact = () => {
+  const { t } = useLanguage();
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -25,13 +27,13 @@ const Contact = () => {
   const contactInfo = [
     {
       icon: Mail,
-      title: 'Email',
+      title: t.contact.info.email,
       value: 'mamadudembele@gmail.com',
       link: 'mailto:mamadudembele@gmail.com'
     },
     {
       icon: MapPin,
-      title: 'Location',
+      title: t.contact.info.location,
       value: 'Toledo, Spain',
       link: 'https://www.google.es/maps/place/Alc%C3%A1zar+de+Toledo/@39.8590611,-4.0430435,14z/data=!3m1!5s0xd6a0ba51a3cc91b:0x50d9b7966be90baa!4m10!1m2!2m1!1salcazar!3m6!1s0xd6a0ba4554d32ff:0xc5d940fb5fb95c60!8m2!3d39.8577545!4d-4.0204962!15sCgdhbGNhemFyWgkiB2FsY2F6YXKSAQhmb3J0cmVzc6oBPBABKgsiB2FsY2F6YXIoDjIeEAEiGvpsSaSB-QCTqj_pSHT-gieX03d4ymBwKVljMgsQAiIHYWxjYXphcuABAA!16zL20vMGNtNDBo?entry=ttu&g_ep=EgoyMDI1MDcwNi4wIKXMDSoASAFQAw%3D%3D'
     }
@@ -49,12 +51,11 @@ const Contact = () => {
         >
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
             <span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
-              Get In Touch
+              {t.contact.title}
             </span>
           </h2>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-            Ready to collaborate on your next project? Let's discuss how we can bring 
-            your ideas to life with cutting-edge technology.
+            {t.contact.subtitle}
           </p>
         </motion.div>
 
@@ -67,8 +68,8 @@ const Contact = () => {
             viewport={{ once: true }}
             className="space-y-8"
           >
-            <h3 className="text-2xl font-bold text-white mb-6">Contact Information</h3>
-            
+            <h3 className="text-2xl font-bold text-white mb-6">{t.contact.info.title}</h3>
+
             {contactInfo.map((info, index) => (
               <motion.a
                 key={index}
@@ -97,7 +98,7 @@ const Contact = () => {
             <form onSubmit={handleSubmit} className="space-y-6">
               <div>
                 <label htmlFor="name" className="block text-white font-semibold mb-2">
-                  Name
+                  {t.contact.form.name}
                 </label>
                 <input
                   type="text"
@@ -107,13 +108,13 @@ const Contact = () => {
                   onChange={handleChange}
                   required
                   className="w-full px-4 py-3 bg-slate-900/50 border border-slate-700 rounded-lg text-white placeholder-gray-400 focus:border-cyan-400 focus:outline-none transition-colors"
-                  placeholder="Your Name"
+                  placeholder={t.contact.form.namePlaceholder}
                 />
               </div>
-              
+
               <div>
                 <label htmlFor="email" className="block text-white font-semibold mb-2">
-                  Email
+                  {t.contact.form.email}
                 </label>
                 <input
                   type="email"
@@ -123,13 +124,13 @@ const Contact = () => {
                   onChange={handleChange}
                   required
                   className="w-full px-4 py-3 bg-slate-900/50 border border-slate-700 rounded-lg text-white placeholder-gray-400 focus:border-cyan-400 focus:outline-none transition-colors"
-                  placeholder="your.email@example.com"
+                  placeholder={t.contact.form.emailPlaceholder}
                 />
               </div>
-              
+
               <div>
                 <label htmlFor="message" className="block text-white font-semibold mb-2">
-                  Message
+                  {t.contact.form.message}
                 </label>
                 <textarea
                   id="message"
@@ -139,10 +140,10 @@ const Contact = () => {
                   required
                   rows={6}
                   className="w-full px-4 py-3 bg-slate-900/50 border border-slate-700 rounded-lg text-white placeholder-gray-400 focus:border-cyan-400 focus:outline-none transition-colors resize-none"
-                  placeholder="Tell me about your project..."
+                  placeholder={t.contact.form.messagePlaceholder}
                 />
               </div>
-              
+
               <motion.button
                 type="submit"
                 whileHover={{ scale: 1.05 }}
@@ -150,7 +151,7 @@ const Contact = () => {
                 className="w-full bg-gradient-to-r from-cyan-500 to-blue-600 text-white px-8 py-4 rounded-lg font-semibold flex items-center justify-center space-x-2 hover:shadow-lg transition-all duration-300"
               >
                 <Send className="h-5 w-5" />
-                <span>Send Message</span>
+                <span>{t.contact.form.send}</span>
               </motion.button>
             </form>
           </motion.div>
